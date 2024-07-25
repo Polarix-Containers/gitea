@@ -8,6 +8,8 @@ LABEL maintainer="Thien Tran contact@tommytran.io"
 ARG UID
 ARG GID
 
+USER root
+
 RUN apk -U upgrade \
     && apk add libstdc++ \
     && rm -rf /var/cache/apk/*
