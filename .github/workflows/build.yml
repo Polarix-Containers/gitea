@@ -14,7 +14,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: blue-oci/gitea
+  IMAGE_NAME: polarix-containers/gitea
 
 jobs:
   build:
