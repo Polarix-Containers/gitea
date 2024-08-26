@@ -8,4 +8,4 @@
 ### Licensing
 - The code in this repository is licensed under the Apache License. 😇
 - Gitea is under the MIT license. Copyright to Gitea belongs to the Gitea project.
-- Any image built by Blue OCI is provided under the combination of license terms resulting from the use of individual packages.
+- Any image built by Polarix Containers is provided under the combination of license terms resulting from the use of individual packages.
