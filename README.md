@@ -3,7 +3,7 @@
 ![Build, scan & push](https://github.com/Polarix-Containers/gitea/actions/workflows/build.yml/badge.svg)
 
 ### Features & usage
-- Built on the [official rootless gitea image](https://github.com/go-gitea/gitea/blob/main/Dockerfile.rootless), to be used as a drop-in replacement.
+- Built on the [official rootless gitea image](https://github.com/go-gitea/gitea/blob/main/Dockerfile.rootless), to be used as a drop-in replacement. Comes with regular rebuilds and hardened_malloc which are standard among Polarix containers.
 
 ### Licensing
 - The code in this repository is licensed under the Apache License. 😇
