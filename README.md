@@ -4,6 +4,7 @@
 
 ### Features & usage
 - Built on the [official rootless gitea image](https://github.com/go-gitea/gitea/blob/main/Dockerfile.rootless), to be used as a drop-in replacement. Comes with regular rebuilds and hardened_malloc which are standard among Polarix containers.
+- Unprivileged image: you should check your volumes' permissions (eg `/data`), default UID/GID 3002.
 
 ### Licensing
 - The code in this repository is licensed under the Apache license. 😇
