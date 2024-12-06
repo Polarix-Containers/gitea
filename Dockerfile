@@ -14,7 +14,8 @@ RUN apk -U upgrade \
     && apk add libstdc++ \
     && rm -rf /var/cache/apk/*
 
-RUN adduser -g ${GID} -u ${UID} --disabled-password --gecos "" gitea
+RUN addgroup -g ${GID} gitea \
+    && adduser -u ${UID} --ingroup gitea --disabled-password gitea
 USER gitea
 
 COPY --from=ghcr.io/polarix-containers/hardened_malloc:latest /install /usr/local/lib/
