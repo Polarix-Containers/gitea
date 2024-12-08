@@ -14,9 +14,12 @@ RUN apk -U upgrade \
     && apk add libstdc++ \
     && rm -rf /var/cache/apk/*
 
-RUN addgroup -g ${GID} gitea \
-    && adduser -u ${UID} --ingroup gitea --disabled-password gitea
-USER gitea
+RUN usermod -u ${UID} git \
+    && groupmod -g ${GID} git \
+    && find / -user 1000 -exec chown -h git {} \; \
+    && find / -group 1000 -exec chgrp -h git {} \;
+    
+USER git
 
 COPY --from=ghcr.io/polarix-containers/hardened_malloc:latest /install /usr/local/lib/
 ENV LD_PRELOAD="/usr/local/lib/libhardened_malloc.so"
