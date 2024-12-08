@@ -11,13 +11,14 @@ ARG GID
 USER root
 
 RUN apk -U upgrade \
-    && apk add libstdc++ \
-    && rm -rf /var/cache/apk/*
+    && apk add libstdc++ shadow
 
 RUN usermod -u ${UID} git \
     && groupmod -g ${GID} git \
     && find / -user 1000 -exec chown -h git {} \; \
-    && find / -group 1000 -exec chgrp -h git {} \;
+    && find / -group 1000 -exec chgrp -h git {} \; \
+    && apk del shadow \
+    && rm -rf /var/cache/apk/*
     
 USER git
 
