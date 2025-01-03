@@ -13,7 +13,8 @@ USER root
 RUN apk -U upgrade \
     && apk add libstdc++ shadow
 
-RUN usermod -u ${UID} git \
+RUN --network=none \
+    usermod -u ${UID} git \
     && groupmod -g ${GID} git \
     && find / -user 1000 -exec chown -h git {} \; \
     && find / -group 1000 -exec chgrp -h git {} \; \
