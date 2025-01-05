@@ -1,5 +1,5 @@
-ARG UID=3002
-ARG GID=3002
+ARG UID=200006
+ARG GID=200006
 
 FROM gitea/gitea:latest-rootless
 
